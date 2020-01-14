@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Des 2019 pada 03.10
--- Versi server: 10.4.8-MariaDB
--- Versi PHP: 7.3.11
+-- Generation Time: 14 Jan 2020 pada 03.05
+-- Versi Server: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,8 +46,16 @@ CREATE TABLE `user` (
   `username` varchar(150) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `role` varchar(10) NOT NULL
+  `role` varchar(10) NOT NULL,
+  `active_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `role`, `active_id`) VALUES
+(1, 'Syahrul Diyono', 'SyahrulDiyono00', '12345678', 'syahruldiyono00@gmail.com', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -66,45 +74,42 @@ CREATE TABLE `warung` (
 --
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `warung`
+-- Indexes for table `warung`
 --
 ALTER TABLE `warung`
   ADD PRIMARY KEY (`id_pedagang`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT untuk tabel `warung`
+-- AUTO_INCREMENT for table `warung`
 --
 ALTER TABLE `warung`
-  MODIFY `id_pedagang` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
+  MODIFY `id_pedagang` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
