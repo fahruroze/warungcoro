@@ -25,21 +25,25 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU ADMINISTRATOR</li>
-        <li class="active treeview">
-          <a href="#">
+        <li class="nav-item">
+          <a href="<?php echo base_url('user'); ?>">
             <i class="fa fa-dashboard"></i> 
             <span>Data User</span>
             <span class="pull-right-container">
             </span>
           </a>
-          
-        <li class="treeview">
-          <a href="#">
+                <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('admin'); ?>">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Admin</span></a>
+      </li>
+        <li class="nav-item">
+          <a href="<?php echo base_url('produk'); ?>">
             <i class="fa fa-files-o"></i>
             <span>Data Produk</span>
           </a>
-        <li class="treeview">
-          <a href="#">
+        <li class="nav-item">
+          <a href="<?php echo base_url('konf_web'); ?>">
             <i class="fa fa-pie-chart"></i>
             <span>Konfigurasi Website</span>
             <span class="pull-right-container">
