@@ -17,28 +17,33 @@ echo form_open_multipart(base_url('produk/editTabel/'.$produk->id_produk),' clas
 
 <div class="content-wrapper">
 	<section class="content">
-		<?php foreach($edit_produk as $tampilProduk) {?>
+		<?php foreach($edit_produk_c as $tampilProduk) {?>
 
-		<form action="<?php echo base_url().'produk/update/'?>" method='post'>
+		<form action="<?php echo base_url().'produkC/update/'?>" method='post'>
 			
 			<div class="form-group">
-				<label>Nama</label>
+				<label>Kode Produk</label>
 				<input type="hidden" name="id_produk" class="form-control" value="<?php echo $tampilProduk->id_produk ?>">
-				<input type="text" name="nama" placeholder="isikan nama" class="form-control" value="<?php echo $tampilProduk->nama ?>" required="required">
+				<input type="text" name="kode_produk" placeholder="Isikan Kode Produk" class="form-control" value="<?php echo $tampilProduk->kode_produk ?>" required="required">
+			</div>
+
+			<div class="form-group">
+				<label>Nama Produk</label>
+				<input type="text" name="nama" placeholder="Isikan Nama Produk" class="form-control" value="<?php echo $tampilProduk->nama ?>" required="required" >
 			</div>
 
 			<div class="form-group">
 				<label>detail_produk</label>
-				<input type="text" name="detail_produk" placeholder="isikan username" class="form-control" value="<?php echo $tampilProduk->detail_produk ?>" required="required" >
+				<input type="text" name="detail_produk" placeholder="Isikan Detail Produk" class="form-control" value="<?php echo $tampilProduk->detail_produk ?>" required="required" >
 			</div>
 
 			<div class="form-group">
-				<label>gambar</label>
+				<label>Gambar</label>
 				<input type="file" name="gambar" class="form-control" value="<?php echo $tampilProduk->gambar ?>" required="required">
 			</div>
-
-			<button type="reset" class="btn btn-danger">Reset</button>
 			<button type="submit" class="btn btn-primary">Simpan</button>
+			<a href="<?php echo base_url().'ProdukC'; ?>" type="button" class="btn btn-danger">Reset</a>
+
 		</form>
 	<?php }?>
 	</section>

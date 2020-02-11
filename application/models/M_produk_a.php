@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-	class M_produk extends CI_Model {
+	class M_produk_a extends CI_Model {
 		public function __construct()
 		{
 			parent::__construct();

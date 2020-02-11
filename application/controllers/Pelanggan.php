@@ -1,67 +1,67 @@
 <?php
 if (! defined('BASEPATH')) exit('No direct script access allowed');
-class User extends CI_Controller {
+class Pelanggan extends CI_Controller {
     public function __construct(){
        parent:: __construct();
-        $this->load->model('M_user');  
+        $this->load->model('M_pelanggan');  
     }
     public function index()
     {
     	$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    	$data['data_user'] = $this->M_user->getData();
+    	$data['data_pelanggan'] = $this->M_pelanggan->getData();
     	$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
-		$this->load->view('V_user', $data);
+		$this->load->view('V_pelanggan', $data);
 		$this->load->view('templates/footer');
     }
    
 
     public function tambahTabel()
     {
-        $this->M_user->insertData();
+        $this->M_pelanggan->insertData();
         ?>
             <script type="text/javascript">
                 alert('Data berhasil disimpan');
-                document.location='http://localhost/warungcoro/user';
+                document.location='http://localhost/warungcoro/pelanggan';
             </script>
         <?php    
     }
     public function editTabel($id)
     {
-        $where = array('id' => $id);
+        $where = array('id_pelanggan' => $id);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['edit_user'] = $this->M_user->updateData($where,'user')->result();
+        $data['edit_pelanggan'] = $this->M_pelanggan->updateData($where,'pelanggan')->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('V_edit_user', $data);
+        $this->load->view('V_edit_pelanggan', $data);
         $this->load->view('templates/footer');
     }
     public function update()
     {
-        $id= $this->input->post('id_user');
-        $nama= $this->input->post('nama');
-        $username= $this->input->post('username');
-        $password= $this->input->post('password');
+        $id= $this->input->post('id_pelanggan');
         $email= $this->input->post('email');
+        $full_name= $this->input->post('full_name');
+        $password= $this->input->post('password');
+        $no_hp= $this->input->post('no_hp');
 
         $data = array (
-            'nama'  =>$nama,
-            'username'   =>$username,
+            'email'  =>$email,
+            'full_name'   =>$full_name,
             'password'      =>$password,
-            'email'         =>$email       
+            'no_hp'         =>$no_hp       
         );
 
-        $this->db->where('id_user', $this->input->post('id_user'));
-        $this->db->update('user', $data);
-        redirect('user');
+        $this->db->where('id_pelanggan', $this->input->post('id_pelanggan'));
+        $this->db->update('pelanggan', $data);
+        redirect('pelanggan');
     }
     public function hapusTabel($id)
     {
-        $this->M_user->hapus_data($id);
+        $this->M_pelanggan->hapus_data($id);
         ?>
             <script type="text/javascript">
                 alert('Data berhasil dihapus');
-                document.location='http://localhost/warungcoro/user';
+                document.location='http://localhost/warungcoro/pelanggan';
             </script>
         <?php
     }     

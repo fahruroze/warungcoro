@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-	class M_user extends CI_Model {
+	class M_penjual extends CI_Model {
 		public function __construct()
 		{
 			parent::__construct();
@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		function getData()
 		{
-			$query = $this->db->query("SELECT * FROM user ORDER BY id_user DESC");
+			$query = $this->db->query("SELECT * FROM penjual ORDER BY id_penjual DESC");
 			if ($query->num_rows() > 0) {
 				return $query->result();
 			}else {
@@ -20,11 +20,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			$data = array (
 				'nama' => $this->input->post('nama'),
-				'username' => $this->input->post('username'),
-				'password' => $this->input->post('password'),
-				'email' => $this->input->post('email'),
+				'lok_toko' => $this->input->post('lok_toko'),
+				'nama_toko' => $this->input->post('nama_toko'),
+				'jml_karyawan' => $this->input->post('jml_karyawan'),
 			);
-			return $this->db->insert('user', $data);
+			return $this->db->insert('penjual', $data);
 		}
 		function updateData($where,$table)
 		{
@@ -34,8 +34,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		function hapus_data($id)
 		{
-			$this->db->where('id_user', $id);
-			$this->db->delete('user');
+			$this->db->where('id_penjual', $id);
+			$this->db->delete('penjual');
 		}
 	}
 

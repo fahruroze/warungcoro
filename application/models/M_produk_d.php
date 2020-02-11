@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-	class M_produk extends CI_Model {
+	class M_produk_d extends CI_Model {
 		public function __construct()
 		{
 			parent::__construct();
@@ -23,7 +23,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				'nama' => $this->input->post('nama'),
 				'detail_produk' => $this->input->post('detail_produk'),
 				'gambar' => $this->input->post('gambar'),
-				'created_date' => $this->input->post('created_date'),
 				);
 			return $this->db->insert('produk', $data);
 		}
