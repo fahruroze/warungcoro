@@ -19,7 +19,7 @@ echo form_open_multipart(base_url('produk/editTabel/'.$produk->id_produk),' clas
 	<section class="content">
 		<?php foreach($edit_produk as $tampilProduk) {?>
 
-		<form action="<?php echo base_url().'produk/update/'?>" method='post'>
+		<form action="<?php echo base_url().'admin/produk/update/'?>" method='post'>
 			
 			<div class="form-group">
 				<label>Nama</label>

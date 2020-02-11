@@ -9,10 +9,21 @@ class Penjual extends CI_Controller {
     {
     	$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     	$data['data_penjual'] = $this->M_penjual->getData();
-    	$this->load->view('templates/header', $data);
-		$this->load->view('templates/sidebar', $data);
-		$this->load->view('V_penjual', $data);
-		$this->load->view('templates/footer');
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('lok_toko', 'Lokasi Toko', 'required');
+        $this->form_validation->set_rules('nama_toko', 'Nama Toko', 'required');
+        $this->form_validation->set_rules('jml_karyawan', 'Jumlah karyawan', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('user/penjual/V_penjual', $data);
+            $this->load->view('templates/footer');
+        }else{
+            $this->M_penjual->insertData();
+            $this->session->set_flashdata('message', 'Data Produk Telah Ditambahkan!');
+            redirect('admin/Penjual');
+        }
     }
    
 
@@ -22,7 +33,7 @@ class Penjual extends CI_Controller {
         ?>
             <script type="text/javascript">
                 alert('Data berhasil disimpan');
-                document.location='http://localhost/warungcoro/penjual';
+                document.location='http://localhost/warungcoro/admin/penjual';
             </script>
         <?php    
     }
@@ -34,7 +45,7 @@ class Penjual extends CI_Controller {
         $data['karyawan'] = array('1,2,3,4,5');
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('V_edit_penjual', $data);
+        $this->load->view('user/penjual/V_edit_penjual', $data);
         $this->load->view('templates/footer');
     }
     public function update()
@@ -54,7 +65,7 @@ class Penjual extends CI_Controller {
 
         $this->db->where('id_penjual', $this->input->post('id_penjual'));
         $this->db->update('penjual', $data);
-        redirect('penjual');
+        redirect('admin/penjual');
     }
     public function hapusTabel($id)
     {
@@ -62,7 +73,7 @@ class Penjual extends CI_Controller {
         ?>
             <script type="text/javascript">
                 alert('Data berhasil dihapus');
-                document.location='http://localhost/warungcoro/penjual';
+                document.location='http://localhost/warungcoro/admin/penjual';
             </script>
         <?php
     }     

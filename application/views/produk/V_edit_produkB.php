@@ -1,3 +1,4 @@
+
 <!-- <?php
 //Error Upload
 
@@ -17,9 +18,9 @@ echo form_open_multipart(base_url('produk/editTabel/'.$produk->id_produk),' clas
 
 <div class="content-wrapper">
 	<section class="content">
-		<?php foreach($edit_produk_d as $tampilProduk) {?>
+		<?php foreach($edit_produk_b as $tampilProduk) {?>
 
-		<form action="<?php echo base_url().'produkD/update/'?>" method='post'>
+		<form action="<?php echo base_url().'admin/produkB/update/'?>" method='post'>
 			
 			<div class="form-group">
 				<label>Kode Produk</label>
@@ -42,7 +43,7 @@ echo form_open_multipart(base_url('produk/editTabel/'.$produk->id_produk),' clas
 				<input type="file" name="gambar" class="form-control" value="<?php echo $tampilProduk->gambar ?>" required="required">
 			</div>
 			<button type="submit" class="btn btn-primary">Simpan</button>
-			<a href="<?php echo base_url().'ProdukD'; ?>" type="button" class="btn btn-danger">Reset</a>
+			<a href="<?php echo base_url().'ProdukB'; ?>" type="button" class="btn btn-danger">Reset</a>
 
 		</form>
 	<?php }?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Feb 2020 pada 04.37
+-- Waktu pembuatan: 11 Feb 2020 pada 17.28
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.2.13
 
@@ -96,6 +96,19 @@ INSERT INTO `produk` (`id_produk`, `nama`, `detail_produk`, `harga`, `gambar`, `
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `rating`
+--
+
+CREATE TABLE `rating` (
+  `id_rating` int(11) NOT NULL,
+  `nama_rating` varchar(100) NOT NULL,
+  `rating` text NOT NULL,
+  `tanggal_rating` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -155,6 +168,12 @@ ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
+-- Indeks untuk tabel `rating`
+--
+ALTER TABLE `rating`
+  ADD PRIMARY KEY (`id_rating`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -188,6 +207,12 @@ ALTER TABLE `penjual`
 --
 ALTER TABLE `produk`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `rating`
+--
+ALTER TABLE `rating`
+  MODIFY `id_rating` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

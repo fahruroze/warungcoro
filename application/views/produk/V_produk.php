@@ -26,12 +26,12 @@
         <td><?= $no++; ?></td>
         <td><?= $tampilProduk->nama ?></td>
         <td><?= $tampilProduk->detail_produk?></td>
-        <td><?= $tampilProduk->gambar?></td>
+        <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('admin/produk/hapusTabel/'.$tampilProduk->id_produk, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td>
         <!-- <td>
           <img src="<?php echo base_url('assets/upload/image/thumbs/'.$produk->gambar) ?>"class = "img img-responsive img-thumbnail " width = "60">
         </td> -->
-        <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('produk/hapusTabel/'.$tampilProduk->id_produk, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
-        <td><?php echo anchor('produk/editTabel/'.$tampilProduk->id_produk,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>  
+        <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('admin/produk/hapusTabel/'.$tampilProduk->id_produk, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
+        <td><?php echo anchor('admin/produk/editTabel/'.$tampilProduk->id_produk,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>  
       </tr>
     <?php endforeach; ?>
   </table>
@@ -59,7 +59,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="<?php echo base_url(). 'produk/tambahTabel';?>">
+        <form method="post" action="<?php echo base_url(). 'admin/produk/tambahTabel';?>">
         <div class="form-group">
             <label>Nama </label>
             <input type="text" name="nama" placeholder="Jony" class="form-control" required="required" >

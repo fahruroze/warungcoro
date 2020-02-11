@@ -30,8 +30,8 @@
           <td><?= $tampilUser->lok_toko?></td>
           <td><?= $tampilUser->nama_toko?></td>
           <td><?= $tampilUser->jml_karyawan?></td>
-          <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('penjual/hapusTabel/'.$tampilUser->id_penjual, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
-          <td><?php echo anchor('penjual/editTabel/'.$tampilUser->id_penjual,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>         
+          <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('admin/penjual/hapusTabel/'.$tampilUser->id_penjual, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
+          <td><?php echo anchor('admin/penjual/editTabel/'.$tampilUser->id_penjual,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>         
         </tr>
       <?php endforeach; ?>
     </table>
@@ -58,7 +58,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form method="post" action="<?php echo base_url(). 'penjual/tambahTabel';?>">
+          <form method="post" action="<?php echo base_url(). 'admin/penjual/tambahTabel';?>">
             <div class="form-group">
               <label>Nama </label>
               <input type="text" name="nama" placeholder="isikan nama" class="form-control">

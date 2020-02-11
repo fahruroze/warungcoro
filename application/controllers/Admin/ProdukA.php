@@ -1,14 +1,14 @@
 <?php
 if (! defined('BASEPATH')) exit('No direct script access allowed');
-class ProdukB extends CI_Controller {
+class ProdukA extends CI_Controller {
     public function __construct(){
        parent:: __construct();
-        $this->load->model('M_produk_b');  
+        $this->load->model('M_produk_a');  
     }
     public function index()
     {
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['data_produk_b'] = $this->M_produk_b->getData();
+        $data['data_produk_a'] = $this->M_produk_a->getData();
 
         $this->form_validation->set_rules('kode_produk', 'Kode Produk', 'required');
         $this->form_validation->set_rules('nama', 'Nama Produk', 'required');
@@ -18,22 +18,22 @@ class ProdukB extends CI_Controller {
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
-            $this->load->view('V_produkB', $data);
+            $this->load->view('produk/V_produkA', $data);
             $this->load->view('templates/footer');
         }else{
-            $this->M_produk_b->insertData();
+            $this->M_produk_a->insertData();
             $this->session->set_flashdata('message', 'Data Produk Telah Ditambahkan!');
-            redirect('ProdukB');
+            redirect('admin/ProdukA');
         }
     }
 
     public function tambahTabel()
     {
-        $this->M_produk_b->insertData();
+        $this->M_produk_a->insertData();
         ?>
             <script type="text/javascript">
                 alert('Data berhasil disimpan');
-                document.location='http://localhost/warungcoro/produkB';
+                document.location='http://localhost/warungcoro/admin/produkA';
             </script>
         <?php
     }
@@ -41,10 +41,10 @@ class ProdukB extends CI_Controller {
     {
         $where = array('id_produk' => $id_produk);
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['edit_produk_b'] = $this->M_produk_b->updateData($where,'produk')->result();
+        $data['edit_produk_a'] = $this->M_produk_a->updateData($where,'produk')->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('V_edit_produkB', $data);
+        $this->load->view('produk/V_edit_produkA', $data);
         $this->load->view('templates/footer');
     }
 
@@ -73,15 +73,15 @@ class ProdukB extends CI_Controller {
 
         $this->db->where('id_produk', $this->input->post('id_produk'));
         $this->db->update('produk', $data);
-        redirect('produkB');
+        redirect('admin/produkA');
     }
     public function hapusTabel($id)
     {
-        $this->M_produk_b->hapus_data($id);
+        $this->M_produk_a->hapus_data($id);
         ?>
             <script type="text/javascript">
                 alert('Data berhasil dihapus');
-                document.location='http://localhost/warungcoro/produkB';
+                document.location='http://localhost/warungcoro/admin/produkA';
             </script>
         <?php
     }     

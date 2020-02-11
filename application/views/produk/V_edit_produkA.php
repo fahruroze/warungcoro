@@ -17,9 +17,9 @@ echo form_open_multipart(base_url('produk/editTabel/'.$produk->id_produk),' clas
 
 <div class="content-wrapper">
 	<section class="content">
-		<?php foreach($edit_produk_c as $tampilProduk) {?>
+		<?php foreach($edit_produk_a as $tampilProduk) {?>
 
-		<form action="<?php echo base_url().'produkC/update/'?>" method='post'>
+		<form action="<?php echo base_url().'admin/produkA/update/'?>" method='post'>
 			
 			<div class="form-group">
 				<label>Kode Produk</label>
@@ -33,7 +33,7 @@ echo form_open_multipart(base_url('produk/editTabel/'.$produk->id_produk),' clas
 			</div>
 
 			<div class="form-group">
-				<label>detail_produk</label>
+				<label>Detail Produk</label>
 				<input type="text" name="detail_produk" placeholder="Isikan Detail Produk" class="form-control" value="<?php echo $tampilProduk->detail_produk ?>" required="required" >
 			</div>
 
@@ -42,7 +42,8 @@ echo form_open_multipart(base_url('produk/editTabel/'.$produk->id_produk),' clas
 				<input type="file" name="gambar" class="form-control" value="<?php echo $tampilProduk->gambar ?>" required="required">
 			</div>
 			<button type="submit" class="btn btn-primary">Simpan</button>
-			<a href="<?php echo base_url().'ProdukC'; ?>" type="button" class="btn btn-danger">Reset</a>
+			<a href="<?php echo base_url().'ProdukA'; ?>" type="button" class="btn btn-danger">Reset</a>
+			<!-- <button type="reset" class="btn btn-danger" data-dismiss="content"><a href="<?php echo base_url().'produkA';?>"></a> Reset</button> -->
 
 		</form>
 	<?php }?>

@@ -1,13 +1,13 @@
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
-      Data Produk Koperasi Mahasiswa
+      Data Produk Warung Mama Celli
       <small>Control panel</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li class="active">Data Produk</li>
-      <li class="active">Data Produk Koperasi Mahasiswa</li>
+      <li class="active">Data Produk Warung Mama Celli</li>
     </ol>
   </section>
   <section class="content">
@@ -26,7 +26,7 @@
       <th colspan="2">Aksi</th>
     </tr>
     <?php $no= 1;
-    foreach ($data_produk_b as $tampilProduk):
+    foreach ($data_produk_c as $tampilProduk):
       ?>
       <tr>
         <td><?= $no++; ?></td>
@@ -43,8 +43,8 @@
         <!-- <td>
           <img src="<?php echo base_url('assets/upload/image/thumbs/'.$produk->gambar) ?>"class = "img img-responsive img-thumbnail " width = "60">
         </td> -->
-        <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('produkB/hapusTabel/'.$tampilProduk->id_produk, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
-        <td><?php echo anchor('produkB/editTabel/'.$tampilProduk->id_produk,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>  
+        <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('admin/produkC/hapusTabel/'.$tampilProduk->id_produk, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
+        <td><?php echo anchor('admin/produkC/editTabel/'.$tampilProduk->id_produk,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>  
       </tr>
     <?php endforeach; ?>
   </table>
@@ -72,7 +72,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="<?php echo base_url(). 'produkB/tambahTabel';?>">
+        <form method="post" action="<?php echo base_url(). 'admin/produkC/tambahTabel';?>">
         <div class="form-group">
             <label>Kode Produk</label>
             <input type="text" name="kode_produk" placeholder="Isikan Kode Produk" class="form-control" required="required" >

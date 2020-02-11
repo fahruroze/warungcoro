@@ -2,11 +2,11 @@
 	<section class="content">
 		<?php foreach($edit_user as $tampilUser) {?>
 
-		<form action="<?php echo base_url().'user/update/'?>" method='post'>
+		<form action="<?php echo base_url().'admin/admin/update/'?>" method='post'>
 			
 			<div class="form-group">
 				<label>Nama</label>
-				<input type="hidden" name="id" class="form-control" value="<?php echo $tampilUser->id ?>">
+				<input type="hidden" name="id_user" class="form-control" value="<?php echo $tampilUser->id_user ?>">
 				<input type="text" name="nama" placeholder="isikan nama" class="form-control" value="<?php echo $tampilUser->nama ?>">
 			</div>
 
