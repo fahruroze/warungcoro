@@ -42,6 +42,22 @@
             <i class="fa fa-files-o"></i>
             <span>Data Produk</span>
           </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo base_url('C_rating'); ?>">
+            <i class="fa fa-files-o"></i>
+            <span>Data Ulusan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <!-- <ul class="treeview-menu">
+            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Warung Acong</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Koperasi</a></li>
+            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Warung Seblak</a></li>
+            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Warung Pojok Kiri</a></li>
+          </ul> -->
+        </li>
         <li class="nav-item">
           <a href="<?php echo base_url('konf_web'); ?>">
             <i class="fa fa-pie-chart"></i>
