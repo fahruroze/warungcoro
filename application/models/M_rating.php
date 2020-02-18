@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-	class M_produk_a extends CI_Model {
+	class M_rating extends CI_Model {
 		public function __construct()
 		{
 			parent::__construct();
@@ -19,15 +19,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		function insertData()
 		{
 			$data = array (
-				'kode_produk' => $this->input->post('kode_produk'),
 				'nama' => $this->input->post('nama'),
 				'detail_produk' => $this->input->post('detail_produk'),
-				'gambar' => $this->input->post('gambar'),
-<<<<<<< HEAD
-				// 'created_date' => $this->input->post('created_date'),
-=======
-				'created_date' => $this->input->post('created_date'),
->>>>>>> bd8caa2ad8f0029ebe41b7e1a2817c6c4a666112
 				);
 			return $this->db->insert('produk', $data);
 		}
@@ -39,14 +32,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			$id_produk = $this->input->post('id_produk');
 			$data = array (
-				'kode_produk' => $this->input->post('kode_produk'),
-				'nama' => $this->input->post('nama'),
-				'detail_produk' => $this->input->post('detail_produk'),
-				'gambar' => $this->input->post('gambar'),
-				'created_by' => $this->input->post('created_by'),
-				'created_date' => $this->input->post('created_date'),
-				'updated_by' => $this->input->post('updated_by'),
-				'updated_by' => $this->input->post('updated_date'),
+			'nama' => $this->input->post('nama'),
+			'detail_produk' => $this->input->post('detail_produk'),
 			);
 			$this->db->where('id_produk',$id);
 			$this->db->update('produk',$data);
