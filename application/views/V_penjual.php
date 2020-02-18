@@ -1,39 +1,37 @@
 <div class="content-wrapper">
     <section class="content-header">
       <h1>
-        Data User
+        Data Penjual
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Data User</li>
+        <li class="active">Data Penjual</li>
       </ol>
     </section>
     <section class="content">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></a><i class="fa fa-plus"></i> Tambah Data User</button></a>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></a><i class="fa fa-plus"></i> Tambah Data Penjual</button></a>
       <br>
       <table id="example2" class="table table-bordered table-striped">
           <tr>
               <th>no</th>
               <th>Nama</th>
-              <th>Username</th>
-              <th>Password</th>
-              <th>Email</th>
-              <th>Role</th>
+              <th>Lokasi Toko</th>
+              <th>Nama Toko</th>
+              <th>Jumlah Karyawan</th>
               <th colspan="2">Aksi</th>
           </tr>
             <?php $no= 1;
-            foreach ($data_user as $tampilUser):
+            foreach ($data_penjual as $tampilUser):
                   ?>
           <tr>
               <td><?= $no++; ?></td>
               <td><?= $tampilUser->nama ?></td>
-              <td><?= $tampilUser->username?></td>
-              <td><?= $tampilUser->password?></td>
-              <td><?= $tampilUser->email?></td>
-              <td><?= $tampilUser->role?></td>
-              <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('user/hapusTabel/'.$tampilUser->id_user, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
-             <td><?php echo anchor('user/editTabel/'.$tampilUser->id_user,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>         
+              <td><?= $tampilUser->lok_toko?></td>
+              <td><?= $tampilUser->nama_toko?></td>
+              <td><?= $tampilUser->jml_karyawan?></td>
+              <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('penjual/hapusTabel/'.$tampilUser->id_penjual, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
+             <td><?php echo anchor('penjual/editTabel/'.$tampilUser->id_penjual,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>         
           </tr>
           <?php endforeach; ?>
       </table>
@@ -60,22 +58,22 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="<?php echo base_url(). 'user/tambahTabel';?>">
+        <form method="post" action="<?php echo base_url(). 'penjual/tambahTabel';?>">
           <div class="form-group">
             <label>Nama </label>
             <input type="text" name="nama" placeholder="isikan nama" class="form-control">
           </div>
           <div class="form-group">
-            <label>Username </label>
-            <input type="text" name="username" placeholder="isikan username" class="form-control">
+            <label>Lokasi Toko </label>
+            <input type="text" name="lok_toko" placeholder="isikan Lokasi Toko" class="form-control">
           </div>
           <div class="form-group">
-            <label>Password </label>
-            <input type="text" name="password" placeholder="isikan password" class="form-control">
+            <label>Nama Toko </label>
+            <input type="text" name="nama_toko" placeholder="isikan nama toko" class="form-control">
           </div>
           <div class="form-group">
-            <label>Email </label>
-            <input type="text" name="email" placeholder="isikan email" class="form-control">
+            <label>Jumlah Karyawan </label>
+            <input type="Control" name="jml_karyawan" placeholder="Pilih Jumlah Karyawan" class="form-control">
           </div>
               <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
               <button type="submit" class="btn btn-primary">Simpan</button>

@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-	class M_user extends CI_Model {
+	class M_pelanggan extends CI_Model {
 		public function __construct()
 		{
 			parent::__construct();
@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		function getData()
 		{
-			$query = $this->db->query("SELECT * FROM user ORDER BY id_user DESC");
+			$query = $this->db->query("SELECT * FROM pelanggan ORDER BY id_pelanggan DESC");
 			if ($query->num_rows() > 0) {
 				return $query->result();
 			}else {
@@ -19,12 +19,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		function insertData()
 		{
 			$data = array (
-				'nama' => $this->input->post('nama'),
-				'username' => $this->input->post('username'),
-				'password' => $this->input->post('password'),
 				'email' => $this->input->post('email'),
+				'full_name' => $this->input->post('full_name'),
+				'password' => $this->input->post('password'),
+				'no_hp' => $this->input->post('no_hp'),
 			);
-			return $this->db->insert('user', $data);
+			return $this->db->insert('pelanggan', $data);
 		}
 		function updateData($where,$table)
 		{
@@ -34,8 +34,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		function hapus_data($id)
 		{
-			$this->db->where('id_user', $id);
-			$this->db->delete('user');
+			$this->db->where('id_pelanggan', $id);
+			$this->db->delete('pelanggan');
 		}
 	}
 

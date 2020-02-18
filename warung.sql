@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2020 at 03:38 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Waktu pembuatan: 03 Des 2019 pada 03.10
+-- Versi server: 10.4.8-MariaDB
+-- Versi PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,50 +25,38 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
   `id_produk` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `detail_produk` varchar(225) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `gambar` varchar(50) NOT NULL,
-  `created_by` varchar(100) NOT NULL,
-  `created_date` date NOT NULL,
-  `updated_by` varchar(100) NOT NULL,
-  `updated_date` date NOT NULL,
-  `kode_produk` int(11) NOT NULL
+  `detail_produk` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `username` varchar(150) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `role` varchar(10) NOT NULL,
-  `created_by` varchar(100) NOT NULL,
-  `created_date` date NOT NULL,
-  `updated_by` varchar(100) NOT NULL,
-  `update_date` date NOT NULL
+  `role` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `warung`
+-- Struktur dari tabel `warung`
 --
 
 CREATE TABLE `warung` (
   `id_pedagang` int(11) NOT NULL,
-  `id_produk` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `nama_karyawan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -78,55 +66,44 @@ CREATE TABLE `warung` (
 --
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `warung`
+-- Indeks untuk tabel `warung`
 --
 ALTER TABLE `warung`
-  ADD PRIMARY KEY (`id_pedagang`),
-  ADD KEY `id_produk` (`id_produk`);
+  ADD PRIMARY KEY (`id_pedagang`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `warung`
+-- AUTO_INCREMENT untuk tabel `warung`
 --
 ALTER TABLE `warung`
   MODIFY `id_pedagang` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `warung`
---
-ALTER TABLE `warung`
-  ADD CONSTRAINT `warung_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

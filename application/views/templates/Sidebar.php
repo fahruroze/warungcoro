@@ -25,23 +25,55 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU ADMINISTRATOR</li>
-        <li class="nav-item">
-          <a href="<?php echo base_url('user'); ?>">
-            <i class="fa fa-dashboard"></i> 
-            <span>Data User</span>
+
+        <li class="menu treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-                <li class="nav-item">
+      <ul class="treeview-menu">
+            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+          </ul>
+      </li>
+
+      <li class="menu treeview">
+          <a href="<?php echo base_url('user'); ?>">
+            <i class="fa fa-files-o"></i> <span>Data Users</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+      <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+            <li class="active"><a href="<?php echo base_url('penjual'); ?>"><i class="fa fa-circle-o"></i> Data Penjual</a></li>
+            <li class="active"><a href="<?php echo base_url('pelanggan'); ?>"><i class="fa fa-circle-o"></i> Data Pelanggan</a></li>
+          </ul>
+      </li>
+     
+      <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('admin'); ?>">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fa fa-fw fa-table"></i>
           <span>Admin</span></a>
       </li>
-        <li class="nav-item">
+
+      <li class="menu treeview">
           <a href="<?php echo base_url('produk'); ?>">
-            <i class="fa fa-files-o"></i>
-            <span>Data Produk</span>
+            <i class="fa fa-files-o"></i> <span>Data Produk</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+      <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('produkA'); ?>"><i class="fa fa-circle-o"></i> Produk Mang Acong</a></li>
+            <li class="active"><a href="<?php echo base_url('produkB'); ?>"><i class="fa fa-circle-o"></i> Produk Koperasi Mahasiswa</a></li>
+            <li class="active"><a href="<?php echo base_url('produkC'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Mama Celli</a></li>
+            <li class="active"><a href="<?php echo base_url('produkD'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Pojok</a></li>
+          </ul>
+      </li>
+
         <li class="nav-item">
           <a href="<?php echo base_url('konf_web'); ?>">
             <i class="fa fa-pie-chart"></i>
@@ -50,12 +82,6 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-          </ul>
         </li>
         
     </section>

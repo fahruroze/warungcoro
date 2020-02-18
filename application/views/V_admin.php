@@ -1,16 +1,16 @@
 <div class="content-wrapper">
     <section class="content-header">
       <h1>
-        Data User
+        Data Admin
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Data User</li>
+        <li class="active">Data Admin</li>
       </ol>
     </section>
     <section class="content">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></a><i class="fa fa-plus"></i> Tambah Data User</button></a>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></a><i class="fa fa-plus"></i> Tambah Data Admin</button></a>
       <br>
       <table id="example2" class="table table-bordered table-striped">
           <tr>
@@ -23,7 +23,7 @@
               <th colspan="2">Aksi</th>
           </tr>
             <?php $no= 1;
-            foreach ($data_user as $tampilUser):
+            foreach ($data_admin as $tampilUser):
                   ?>
           <tr>
               <td><?= $no++; ?></td>
@@ -32,8 +32,8 @@
               <td><?= $tampilUser->password?></td>
               <td><?= $tampilUser->email?></td>
               <td><?= $tampilUser->role?></td>
-              <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('user/hapusTabel/'.$tampilUser->id_user, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
-             <td><?php echo anchor('user/editTabel/'.$tampilUser->id_user,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>         
+              <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('admin/hapusTabel/'.$tampilUser->id_user, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
+             <td><?php echo anchor('admin/editTabel/'.$tampilUser->id_user,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>         
           </tr>
           <?php endforeach; ?>
       </table>
