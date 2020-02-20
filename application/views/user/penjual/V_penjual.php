@@ -19,6 +19,10 @@
         <th>Lokasi Toko</th>
         <th>Nama Toko</th>
         <th>Jumlah Karyawan</th>
+        <th>Gambar</th>
+        <th>Nama Toko</th>
+        <th>Jumlah Karyawan</th>
+        <th>Gambar</th>
         <th colspan="2">Aksi</th>
       </tr>
       <?php $no= 1;
@@ -30,6 +34,9 @@
           <td><?= $tampilUser->lok_toko?></td>
           <td><?= $tampilUser->nama_toko?></td>
           <td><?= $tampilUser->jml_karyawan?></td>
+          <td>
+          <img src="<?php echo base_url('assets/template/front/images/'.$data_penjual->gambar) ?>"class = "img img-responsive img-thumbnail " width = "60">
+        </td>
           <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('admin/penjual/hapusTabel/'.$tampilUser->id_penjual, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
           <td><?php echo anchor('admin/penjual/editTabel/'.$tampilUser->id_penjual,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>         
         </tr>

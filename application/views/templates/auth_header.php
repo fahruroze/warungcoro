@@ -18,7 +18,7 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/template/back/plugins/iCheck/square/blue.css">
   <!-- Select2 -->
-  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/template/back/bower_components/select2/dist/css/select2.min.css">
 
 
   <!-- Google Font -->
