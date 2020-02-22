@@ -1,17 +1,17 @@
  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="<?php echo base_url() ?>assets/template/back/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p><?= $user['nama']; ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="<?php echo base_url() ?>assets/template/back/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
       </div>
-      <!-- search form -->
+      <div class="pull-left info">
+        <p><?= $user['nama']; ?></p>
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <!-- search form -->
       <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -29,114 +29,91 @@
         <li class="menu treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-<<<<<<< HEAD
+
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-      <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
-      </li>
-
-      <li class="menu treeview">
-          <a href="<?php echo base_url('user'); ?>">
-            <i class="fa fa-files-o"></i> <span>Data Users</span>
-=======
->>>>>>> bd8caa2ad8f0029ebe41b7e1a2817c6c4a666112
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-      <ul class="treeview-menu">
-<<<<<<< HEAD
-            <li class="active"><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
-            <li class="active"><a href="<?php echo base_url('penjual'); ?>"><i class="fa fa-circle-o"></i> Data Penjual</a></li>
-            <li class="active"><a href="<?php echo base_url('pelanggan'); ?>"><i class="fa fa-circle-o"></i> Data Pelanggan</a></li>
-          </ul>
-      </li>
-     
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('admin'); ?>">
-          <i class="fa fa-fw fa-table"></i>
-          <span>Admin</span></a>
-      </li>
-
-      <li class="menu treeview">
-          <a href="<?php echo base_url('produk'); ?>">
-=======
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
-      </li>
-
-      <li class="menu treeview">
+          
+        </li>
+        <li class="menu treeview">
           <a href="<?php echo base_url('admin/user'); ?>">
             <i class="fa fa-files-o"></i> <span>Data Users</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-      <ul class="treeview-menu">
+          <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url('admin/admin'); ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
             <li class="active"><a href="<?php echo base_url('admin/penjual'); ?>"><i class="fa fa-circle-o"></i> Data Penjual</a></li>
             <li class="active"><a href="<?php echo base_url('admin/pelanggan'); ?>"><i class="fa fa-circle-o"></i> Data Pelanggan</a></li>
           </ul>
-      </li>
-     
+        </li>
 
-      <li class="menu treeview">
+
+        <li class="menu treeview">
           <a href="<?php echo base_url('admin/produk'); ?>">
->>>>>>> bd8caa2ad8f0029ebe41b7e1a2817c6c4a666112
+
             <i class="fa fa-files-o"></i> <span>Data Produk</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-<<<<<<< HEAD
+
           </a>
-      <ul class="treeview-menu">
+          <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url('produkA'); ?>"><i class="fa fa-circle-o"></i> Produk Mang Acong</a></li>
             <li class="active"><a href="<?php echo base_url('produkB'); ?>"><i class="fa fa-circle-o"></i> Produk Koperasi Mahasiswa</a></li>
             <li class="active"><a href="<?php echo base_url('produkC'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Mama Celli</a></li>
             <li class="active"><a href="<?php echo base_url('produkD'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Pojok</a></li>
           </ul>
-      </li>
+        </li>
 
-=======
+
+      </a>
+      <ul class="treeview-menu">
+        <li class="active"><a href="<?php echo base_url('admin/produkA'); ?>"><i class="fa fa-circle-o"></i> Produk Mang Acong</a></li>
+        <li class="active"><a href="<?php echo base_url('admin/produkB'); ?>"><i class="fa fa-circle-o"></i> Produk Koperasi Mahasiswa</a></li>
+        <li class="active"><a href="<?php echo base_url('admin/produkC'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Mama Celli</a></li>
+        <li class="active"><a href="<?php echo base_url('admin/produkD'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Pojok</a></li>
+      </ul>
+    </li>        
+    <li class="menu treeview">
+          <a href="<?php echo base_url('admin/rating'); ?>">
+
+            <i class="fa fa-files-o"></i> <span>Data Rating</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url('admin/produkA'); ?>"><i class="fa fa-circle-o"></i> Produk Mang Acong</a></li>
-            <li class="active"><a href="<?php echo base_url('admin/produkB'); ?>"><i class="fa fa-circle-o"></i> Produk Koperasi Mahasiswa</a></li>
-            <li class="active"><a href="<?php echo base_url('admin/produkC'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Mama Celli</a></li>
-            <li class="active"><a href="<?php echo base_url('admin/produkD'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Pojok</a></li>
+            <li class="active"><a href="<?php echo base_url('RatingA'); ?>"><i class="fa fa-circle-o"></i> Rating Mang Acong</a></li>
+            <li class="active"><a href="<?php echo base_url('RatingB'); ?>"><i class="fa fa-circle-o"></i> Rating Koperasi Mahasiswa</a></li>
+            <li class="active"><a href="<?php echo base_url('RatingC'); ?>"><i class="fa fa-circle-o"></i> Rating Warung Mama Celli</a></li>
+            <li class="active"><a href="<?php echo base_url('RatingD'); ?>"><i class="fa fa-circle-o"></i> Rating Warung Pojok</a></li>
           </ul>
-      </li>        <li class="nav-item">
-          <a href="<?php echo base_url('admin/C_rating'); ?>">
-            <i class="fa fa-files-o"></i>
-            <span>Data Ulasan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <!-- <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Warung Acong</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Koperasi</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Warung Seblak</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Warung Pojok Kiri</a></li>
-          </ul> -->
         </li>
->>>>>>> bd8caa2ad8f0029ebe41b7e1a2817c6c4a666112
-        <li class="nav-item">
-          <a href="<?php echo base_url('admin/konf_web'); ?>">
-            <i class="fa fa-pie-chart"></i>
-            <span>Konfigurasi Website</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-        </li>
-        
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+
+
+      </a>
+      <ul class="treeview-menu">
+        <li class="active"><a href="<?php echo base_url('admin/RatingA'); ?>"><i class="fa fa-circle-o"></i> Produk Mang Acong</a></li>
+        <li class="active"><a href="<?php echo base_url('admin/RatingB'); ?>"><i class="fa fa-circle-o"></i> Produk Koperasi Mahasiswa</a></li>
+        <li class="active"><a href="<?php echo base_url('admin/RatingC'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Mama Celli</a></li>
+        <li class="active"><a href="<?php echo base_url('admin/RatingD'); ?>"><i class="fa fa-circle-o"></i> Produk Warung Pojok</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a href="<?php echo base_url('admin/konf_web'); ?>">
+        <i class="fa fa-pie-chart"></i>
+        <span>Konfigurasi Website</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+    </li>
+
+  </section>
+  <!-- /.sidebar -->
+</aside>

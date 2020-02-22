@@ -1,6 +1,6 @@
 <?php
 if (! defined('BASEPATH')) exit('No direct script access allowed');
-class C_rating extends CI_Controller {
+class Rating extends CI_Controller {
     public function __construct(){
        parent:: __construct();
         $this->load->model('M_rating');  
@@ -8,8 +8,7 @@ class C_rating extends CI_Controller {
     public function index()
     {
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-<<<<<<< HEAD:application/controllers/Produk.php
-        $data['data_produk'] = $this->M_produk_a->getData();
+        $data['data_produk'] = $this->M_rating->getData();
 
         $this->form_validation->set_rules('kode_produk', 'Kode Produk', 'required');
         $this->form_validation->set_rules('nama', 'Nama Produk', 'required');
@@ -19,20 +18,13 @@ class C_rating extends CI_Controller {
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
-            $this->load->view('V_produk', $data);
+            $this->load->view('rating/V_rating', $data);
             $this->load->view('templates/footer');
         }else{
             $this->M_produk->insertData();
             $this->session->set_flashdata('message', 'Data Produk Telah Ditambahkan!');
-            redirect('Produk');
+            redirect('admin/Rating');
         }
-=======
-        $data['data_produk'] = $this->M_rating->getData();
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('V_rating', $data);
-        $this->load->view('templates/footer');
->>>>>>> bd8caa2ad8f0029ebe41b7e1a2817c6c4a666112:application/controllers/Admin/C_rating.php
     }
 
     public function tambahTabel()
@@ -41,7 +33,7 @@ class C_rating extends CI_Controller {
         ?>
             <script type="text/javascript">
                 alert('Data berhasil disimpan');
-                document.location='http://localhost/warungcoro/produk';
+                document.location='http://localhost/warungcoro/admin/produk';
             </script>
         <?php
     }
@@ -52,7 +44,7 @@ class C_rating extends CI_Controller {
         $data['edit_produk'] = $this->M_produk_a->updateData($where,'produk')->result();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('V_edit_produk', $data);
+        $this->load->view('produk/V_edit_produk', $data);
         $this->load->view('templates/footer');
     }
 
@@ -81,7 +73,7 @@ class C_rating extends CI_Controller {
 
         $this->db->where('id_produk', $this->input->post('id_produk'));
         $this->db->update('produk', $data);
-        redirect('produk');
+        redirect('admin/produk');
     }
     public function hapusTabel($id)
     {
@@ -89,7 +81,7 @@ class C_rating extends CI_Controller {
         ?>
             <script type="text/javascript">
                 alert('Data berhasil dihapus');
-                document.location='http://localhost/warungcoro/produk';
+                document.location='http://localhost/warungcoro/admin/produk';
             </script>
         <?php
     }     

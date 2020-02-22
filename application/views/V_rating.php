@@ -1,74 +1,72 @@
 <div class="content-wrapper">
-<<<<<<< HEAD:application/views/V_produk.php
+
   <section class="content-header">
     <h1>
-      Data Produk
+      Data Rating
       <small>Control panel</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Data Produk</li>
+      <li class="active">Data Rating</li>
     </ol>
-=======
     <section class="content-header">
       <h1>
-        Data Ulusan
+        Data Rating
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Data Ulasan Produk</li>
+        <li class="active">Data Rating Produk</li>
       </ol>
     </section>
     <section class="content">
       <table id="example2" class="table table-bordered table-striped">
+        <tr>
+          <th>no</th>
+          <th>Nama</th>
+          <th>Ulasan</th>
+          <th>Tanggal</th>
+        </tr>
+        <?php $no= 1;
+        foreach ($data_produk as $tampilProduk):
+          ?>
           <tr>
-              <th>no</th>
-              <th>Nama</th>
-              <th>Ulasan</th>
-              <th>Tanggal</th>
+            <td><?= $no++; ?></td>
+            <td><?= $tampilProduk->nama ?></td>
+            <td><?= $tampilProduk->detail_produk?></td>
+            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('produk/hapusTabel/'.$tampilProduk->id_produk, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
+            <td><?php echo anchor('produk/editTabel/'.$tampilProduk->id_produk,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>  
           </tr>
-            <?php $no= 1;
-            foreach ($data_produk as $tampilProduk):
-                  ?>
-          <tr>
-              <td><?= $no++; ?></td>
-              <td><?= $tampilProduk->nama ?></td>
-              <td><?= $tampilProduk->detail_produk?></td>
-              <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('produk/hapusTabel/'.$tampilProduk->id_produk, '<div class="btn btn-danger btn-sm" ><i class="fa fa-trash"></i></div>' ) ?> </td> 
-              <td><?php echo anchor('produk/editTabel/'.$tampilProduk->id_produk,'<div class="btn btn-primary btn-sm" ><i class="fa fa-edit"></i></div>')?></td>  
-          </tr>
-          <?php endforeach; ?>
+        <?php endforeach; ?>
       </table>
-    <div class="card-footer small text-muted">
-            <?php
-            $tanggal= mktime(date("m"),date("d"),date("Y"));
-            echo "Tanggal : <b>".date("d-M-Y", $tanggal)."</b> ";
-            date_default_timezone_set('Asia/Jakarta');
-            $jam=date("H:i:s");
-            echo "| Pukul : <b>". $jam." "."</b>";
-            $a = date ("H");
-            ?> 
-          </div>
->>>>>>> bd8caa2ad8f0029ebe41b7e1a2817c6c4a666112:application/views/V_rating.php
-  </section>
-  <section class="content">
-   <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></a><i class="fa fa-plus"></i> Tambah Data Produk</button>
-   <table id="example2" class="table table-bordered table-striped">
-    <tr>
-      <th>No</th>
-      <th>Nama</th>
-      <th>Detail_produk</th>
-      <th>Gambar</th>
-      <th colspan="2">Aksi</th>
-    </tr>
-    <?php $no= 1;
-    foreach ($data_produk as $tampilProduk):
-      ?>
+      <div class="card-footer small text-muted">
+        <?php
+        $tanggal= mktime(date("m"),date("d"),date("Y"));
+        echo "Tanggal : <b>".date("d-M-Y", $tanggal)."</b> ";
+        date_default_timezone_set('Asia/Jakarta');
+        $jam=date("H:i:s");
+        echo "| Pukul : <b>". $jam." "."</b>";
+        $a = date ("H");
+        ?> 
+      </div>
+    </section>
+    <section class="content">
+     <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></a><i class="fa fa-plus"></i> Tambah Data Produk</button>
+     <table id="example2" class="table table-bordered table-striped">
       <tr>
-        <td><?= $no++; ?></td>
-        <td><?= $tampilProduk->nama ?></td>
-        <td><?= $tampilProduk->detail_produk?></td>
-        <td><?= $tampilProduk->gambar?></td>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Detail_produk</th>
+        <th>Gambar</th>
+        <th colspan="2">Aksi</th>
+      </tr>
+      <?php $no= 1;
+      foreach ($data_produk as $tampilProduk):
+        ?>
+        <tr>
+          <td><?= $no++; ?></td>
+          <td><?= $tampilProduk->nama ?></td>
+          <td><?= $tampilProduk->detail_produk?></td>
+          <td><?= $tampilProduk->gambar?></td>
         <!-- <td>
           <img src="<?php echo base_url('assets/upload/image/thumbs/'.$produk->gambar) ?>"class = "img img-responsive img-thumbnail " width = "60">
         </td> -->
@@ -88,12 +86,8 @@
     ?> 
   </div>
 </section>
-
-
-<<<<<<< HEAD:application/views/V_produk.php
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-=======
   <!-- Modal -->
 <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 >>>>>>> bd8caa2ad8f0029ebe41b7e1a2817c6c4a666112:application/views/V_rating.php
@@ -129,9 +123,6 @@
         </div>
           
         </form>
-        
-=======
->>>>>>> bd8caa2ad8f0029ebe41b7e1a2817c6c4a666112:application/views/V_rating.php
       </div>
     </div>
   </div> -->

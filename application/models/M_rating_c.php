@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class M_rating extends CI_Model {
+class M_rating_c extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
@@ -9,7 +9,7 @@ class M_rating extends CI_Model {
 
 	function getData()
 	{
-		$query = $this->db->query("SELECT * FROM rating ORDER BY id_rating DESC");
+		$query = $this->db->query("SELECT * FROM rating_c ORDER BY id_rating DESC");
 		if ($query->num_rows() > 0) {
 			return $query->result();
 		}else {
@@ -24,7 +24,7 @@ class M_rating extends CI_Model {
 			'rating' => $this->input->post('rating'),
 			'tanggal_rating' => $this->input->post('tanggal_rating'),
 		);
-		return $this->db->insert('rating', $data);
+		return $this->db->insert('rating_c', $data);
 	}
 	function updateData($where,$table)
 	{
@@ -44,8 +44,8 @@ class M_rating extends CI_Model {
 	}
 	function hapus_data($id)
 	{
-		$this->db->where('id_produk', $id);
-		$this->db->delete('produk');
+		$this->db->where('id_rating', $id);
+		$this->db->delete('rating_c');
 	}
 }
 
