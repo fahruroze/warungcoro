@@ -12,7 +12,7 @@
          
               <div class="staff">
 
-                <div class="img" style="background-image: url(<?php echo base_url() ?>assets/template/front/images/bg_6.jpg);"></div>
+                <div class="img" style="background-image: url(<?php echo base_url() ?>assets/template/back/dist/img/ . $penjual->image;);"></div>
                 <div class="text pt-4">
                   <h3><?= $penjual['nama'];?></h3>
                   <span class="position mb-2">Restaurant Owner</span>

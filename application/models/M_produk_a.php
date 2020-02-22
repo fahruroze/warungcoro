@@ -23,11 +23,16 @@ class M_produk_a extends CI_Model {
 			'nama' => $this->input->post('nama'),
 			'detail_produk' => $this->input->post('detail_produk'),
 			'gambar' => $this->input->post('gambar'),
+<<<<<<< HEAD
 
 			'created_date' => $this->input->post('created_date'),
 
 			'created_date' => $this->input->post('created_date'),
 
+=======
+			'created_date' => $this->input->post('created_date'),
+			'created_date' => $this->input->post('created_date'),
+>>>>>>> 5a05fa6c070ec9b728288e493f06a6e43af54f26
 		);
 		return $this->db->insert('produk', $data);
 	}
