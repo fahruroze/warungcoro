@@ -41,6 +41,14 @@ echo form_open_multipart(base_url('produk/editTabel/'.$produk->id_produk),' clas
 					<label>Jumlah Karyawan</label>
 					<input type="text" name="jml_karyawan" class="form-control" value="<?php echo $tampilData->jml_karyawan ?>" required="required">
 				</div>
+
+				<div class="form-group">
+					<label>Motto Penjual</label>
+					<textarea name="motto" class="form-control" placeholder="Motto">"<?php echo $tampilData->motto ?>"	
+					</textarea>
+				</div>
+
+						
 		<!-- 		<div class="form-group">
 					<label>Picture</label>
 					<div class="col-sm-3">

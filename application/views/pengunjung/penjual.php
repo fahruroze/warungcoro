@@ -12,11 +12,12 @@
          
               <div class="staff">
 
-                <div class="img" style="background-image: url(<?php echo base_url() ?>assets/template/back/dist/img/ . $penjual->image;);"></div>
+                <div class="img" style="background-image: url(<?php echo base_url('assets/template/back/dist/img/'.$penjual['image']);?>"></div>
                 <div class="text pt-4">
                   <h3><?= $penjual['nama'];?></h3>
                   <span class="position mb-2">Restaurant Owner</span>
-                  <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                  <p>"<?=$penjual['motto'];?>"</p>
+                  <br>
                   <div class="faded">
                     <!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
                     <ul class="ftco-social d-flex">
